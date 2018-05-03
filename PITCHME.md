@@ -71,7 +71,7 @@ by Nihar Aleti
 
 ---
 
-### Easier manually format emails in Chatter in Classic than in lightning.
+#### Easier manually format emails in Chatter in Classic than in lightning.
 
 > In lightning, within the Chatter section, I have the option to send release email from there. I have to manually format the body of the text to insert paragraph breaks where needed. I find it quicker and easier to simply switch to classic and send the email from there without having to manually add recipient emails and reformat the body.
 
