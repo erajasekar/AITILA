@@ -1,6 +1,6 @@
 ## Actionable Insights To Increase Lightning Adoption 
 
-##### <span style="font-family:Helvetica Neue; font-style: italic; font-weight:bold"><span style="color:#e49436">Rajasekar Elango </span> - Instrumentaion Team</span>
+##### <span style="font-family:Helvetica Neue; font-style: italic; font-weight:bold"><span style="color:#e49436">Rajasekar Elango </span> - Instrumentation Team</span>
 
 
 ---
@@ -86,7 +86,7 @@ Turn this into a Instrumentation Spark Playground where developers can do adhoc 
 ---
 ## How to make this useful beyond Hackathon?
 
-We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
+We can extend idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
 
 ---
 
