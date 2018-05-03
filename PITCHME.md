@@ -20,6 +20,7 @@ Correlate Lightning Interaction and Lightning Page View events from AILTN log li
 * Transformed Salesforce User Ids to user email address for Gus and Org62 org.
 
 ---
+## What did I do?
 
 * Programmatically Exported results to Wave Analytics studio.
 * Created dashboard to identify top users, exit pages and page flow pattern. 
@@ -80,14 +81,17 @@ by Miguel Ulloa
 
 ## How to make this useful beyond Hackathon?
 
-* Turn this into a Instrumentation Spark Playground where developers can do adhoc correlation/aggregation to explore AILTN. (Just like people do with splunk queries, but spark + wave is much more efficient)
+Turn this into a Instrumentation Spark Playground where developers can do adhoc correlation/aggregation to explore AILTN. (Just like people do with splunk queries, but spark + wave is much more efficient)
+
+---
+## How to make this useful beyond Hackathon?
+
+We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
 
 ---
 
-* We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
+## How to make this useful beyond Hackathon?
 
----
-
-* Use DVA's Spark or Gridforce infrastructure to run pre-defined aggregation continuously and push results to Wave. 
+Use DVA's Spark or Gridforce infrastructure to run pre-defined aggregation continuously and push results to Wave. 
 
 
