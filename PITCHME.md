@@ -80,14 +80,14 @@ by Miguel Ulloa
 
 ## How to make this useful beyond Hackathon?
 
-1. Turn this into a Instrumentation Spark Playground where developers can do adhoc correlation/aggregation to explore AILTN. (Just like people do with splunk queries, but spark + wave is much more efficient)
+* Turn this into a Instrumentation Spark Playground where developers can do adhoc correlation/aggregation to explore AILTN. (Just like people do with splunk queries, but spark + wave is much more efficient)
 
 ---
 
-2. We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
+* We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
 
 ---
 
-3. Use DVA's Spark or Gridforce infrastructure to run pre-defined aggregation continuously and push results to Wave. 
+* Use DVA's Spark or Gridforce infrastructure to run pre-defined aggregation continuously and push results to Wave. 
 
 
