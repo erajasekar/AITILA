@@ -62,9 +62,10 @@ by Nick Gardner
 ### No Quick Access Menu
 
 Issues on top of my mind: 
-1) No Quick Access Menu
-2) Number of Buttons are limited only 10 are allowed which is a show stopper for any Person who is working on a POC
-3) Not an easy Page layout link like we have in Classic
+
+1. No Quick Access Menu
+2. Number of Buttons are limited only 10 are allowed which is a show stopper for any Person who is working on a POC
+3. Not an easy Page layout link like we have in Classic
 
 by Nihar Aleti
 
@@ -72,7 +73,7 @@ by Nihar Aleti
 
 ### Easier manually format emails in Chatter in Classic than in lightning.
 
-> In lightning, within the Chatter section, I have the option to send release email from there. I chose not to because I have to manually remove recipient emails from the body and paste those emails to the above fields, CC and BCC accordingly.  The recipient emails that are in the body should already be pre-populated in the associated BCC and CC fields.  I also have to manually format the body of the text to insert paragraph breaks where needed.   As a result, I find it quicker and easier to simply switch to classic and send the email from there without having to manually add recipient emails and reformat the body.
+> In lightning, within the Chatter section, I have the option to send release email from there. I have to manually format the body of the text to insert paragraph breaks where needed. I find it quicker and easier to simply switch to classic and send the email from there without having to manually add recipient emails and reformat the body.
 
 by Miguel Ulloa
 ---
