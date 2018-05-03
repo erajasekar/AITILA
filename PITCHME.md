@@ -1,10 +1,12 @@
 # Actionable Insights To Increase Lightning Adoption 
 
-> Lightning foundation Hackathon May'18 Hackathon
+### Rajasekar Elango Instrumentation Team
 
 # Idea
 
-Mine instrumentation data to find actionable insights to increase lightning adoption. Correlate Lightning Interaction and Lightning Page View events from AILTN log lines to identify most popular users, pages, page flow patterns of Lightning Abandonment. 
+> Mine instrumentation data to find actionable insights to increase lightning adoption. Correlate Lightning Interaction and Lightning Page View events from AILTN log lines to identify most popular users, pages, page flow patterns of Lightning Abandonment. 
+
+---
 
 # What did I do?
 
@@ -12,8 +14,10 @@ Mine instrumentation data to find actionable insights to increase lightning adop
 2. Used Apache Zeppelin (Apache Spark interactive notebook) , to correlate and aggregate interaction and page views for `switchToAloha` event.
 3. Transformed Salesforce User Ids to user email address for Gus and Org62 org.
 4. Programmatically Exported results to Wave Analytics studio.
-5. Created dashboard to identify top users, exit pages and page flow pattern. //DEMO
+5. Created dashboard to identify top users, exit pages and page flow pattern. 
 6. Emailed users asking for feedback on why they switched.
+
+---
 
 # Feedback I received
 
@@ -30,7 +34,7 @@ Updating tasks is cumbersome and hard to access after loading a story (that's no
 3) Not an easy Page layout link like we have in Classic | |
 |Miguel Ulloa |Easier manually format emails in Chatter in Classic than in lightning. |In lightning, within the Chatter section, I have the option to send release email from there. I chose not to because I have to manually remove recipient emails from the body and paste those emails to the above fields, CC and BCC accordingly.  The recipient emails that are in the body should already be pre-populated in the associated BCC and CC fields.  I also have to manually format the body of the text to insert paragraph breaks where needed.   As a result, I find it quicker and easier to simply switch to classic and send the email from there without having to manually add recipient emails and reformat the body. |
 
-
+---
 
 # How to make this useful beyond Hackathon?
 
