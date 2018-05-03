@@ -1,284 +1,41 @@
-## Spring
+# Actionable Insights To Increase Lightning Adoption 
 
-+++
+> Lightning foundation Hackathon May'18 Hackathon
 
-### What is dependecy Injection?
+# Idea
 
-Instead of 
+Mine instrumentation data to find actionable insights to increase lightning adoption. Correlate Lightning Interaction and Lightning Page View events from AILTN log lines to identify most popular users, pages, page flow patterns of Lightning Abandonment. 
 
-```java
-public class A {
-  private B b;
+# What did I do?
 
-  public A() {
-    this.b = new B(); // A *depends on* B
-  }
-  public void DoSomeStuff() {
-    // Do something with B here
-  }
-}
-public static void Main(string[] args) {
-  A a = new A();
-  a.DoSomeStuff();
-}
+1. Imported AILTN logs from Splunk.
+2. Used Apache Zeppelin (Apache Spark interactive notebook) , to correlate and aggregate interaction and page views for `switchToAloha` event.
+3. Transformed Salesforce User Ids to user email address for Gus and Org62 org.
+4. Programmatically Exported results to Wave Analytics studio.
+5. Created dashboard to identify top users, exit pages and page flow pattern. //DEMO
+6. Emailed users asking for feedback on why they switched.
 
-```
-+++
+# Feedback I received
 
-You write 
+|User |Action Items / Issues in Lightning |Actual Comments  |
+|---  |---  |---  |
+|Yiming Qi  |Support inline editing   |I switch to classic because I want to do inline field editing on work items, as opposed to in lightning I have to click edit first then change the fields. |
+|Michael Dinsmore |Cases list view reports Error "Lightning isnt' supported"  |When I go to the "cases" tool in GUS, and then to the case list view, I get an error that says that Lightning isnt' supported. |
+|Derek Van Dyke |Attachments (e.g. google docs) do not load when linking from within lighting |It doesn't support in-line editing of fields
+Attachments (e.g. google docs) do not load when linking from within lighting
+Updating tasks is cumbersome and hard to access after loading a story (that's not specific to work-manager, however)  |
+|Nick Gardner |when building reports and dashboards 80% of the time the page will not load causing me to refresh or exit lightning all together | |
+|Nihar Aleti  |1) No Quick Access Menu
+2) Number of Buttons are limited only 10 are allowed which is a show stopper for any Person who is working on a POC
+3) Not an easy Page layout link like we have in Classic | |
+|Miguel Ulloa |Easier manually format emails in Chatter in Classic than in lightning. |In lightning, within the Chatter section, I have the option to send release email from there. I chose not to because I have to manually remove recipient emails from the body and paste those emails to the above fields, CC and BCC accordingly.  The recipient emails that are in the body should already be pre-populated in the associated BCC and CC fields.  I also have to manually format the body of the text to insert paragraph breaks where needed.   As a result, I find it quicker and easier to simply switch to classic and send the email from there without having to manually add recipient emails and reformat the body. |
 
-```java
-public class A {
-  private B b;
-  // A now takes its dependencies as arguments
-  public A(B b) { 
-    this.b = b; 
-  }
-  public void DoSomeStuff() {
-    // Do something with B here
-  }
-}
-public static void Main(string[] args) {
-  B b = new B(); // B is constructed here instead
-  A a = new A(b);
-  a.DoSomeStuff();
-}
 
-```
-+++
 
-### Why use dependency injection?
+# How to make this useful beyond Hackathon?
 
-* Gives you ton of advantages.
-* Ability to control functionality from a central place instead of spreading it throughout your program.
-* Ablity to easily test each class in isolation because you can pass along mocked objects.
-* But the drawback is you have to deal with complexity of wiring all your references in a central place.
-* That's why we use DI Framework like Spring.
-
-+++
-### How Spring annotation works?
-
-Examples 
-
-UIInstrumentationImplAutoConfiguration
-InstrumentationServiceImpl
-LegacyAppAnalyticsHandler
-LightningInstrumentationConfig
-Flowables
-
-+++
-
-### Spring best pratices
-
-* Split you code into API vs IMPL module
-* When creating a new class think if it should be managed by spring or not
-* Generally it's ok to not use DI for value or data classes, util classes 
-
-+++
-
-### Caveats in storing state
-
-* Don't manage state of variables in spring managed classes as it will used from multiple threads.
-* If you know some class is thread safe `@NotThreadSafe` to document it.
-
-https://gus.lightning.force.com/lightning/r/0D5B0000007vzcNKAQ/view
-
-https://swarm.soma.salesforce.com/changes/12006421
-
-It was very hard to debug these kind of errors.
-
-+++
-
-### Immutability
-
-> Messing with the state is the root of many problems.
-
-* You should [minimize the state as much as possible](https://medium.com/@rufuszh90/effective-java-item-15-minimise-mutability-2526108ac7f1).
-* Immutable object simplify concurrent programming as there is not shared state, you don't need to synchronize.
-* By default, make a class immutable and use builder pattern if a class has too many fields.
-
-
----
-
-## Functional programming 
-
-+++
-
-### Why use Functional programming?
-
-* Functional programs have no side effects, so it's easier to reason about, easier to test, easier to run concurrent context.
-* OOP abstracts over data, while FP abstracts over behaviour.
-* It expresses what code does instead of how it does.
-
-+++
-
-### Declarative code is easier to Read
-
-* Declarative code is easier to understand then logic expressed in imperative code
-* That's why declarive languages like HTML, SQL are easier than imperative languages.
-
-+++
-
-### Example for Declarative vs Imperative
-
-```javascript
-const tripleMap = numbers => {
-    const triple = [];
-    for (let i = 0; i < numbers.length; i++) {
-        triple.push(numbers[i] * 3);
-    }
-return triple;
-};
-```
-
-Functional Style
-
-```javascript
-consttripleMap = numbers => numbers.map(n => n * 3);
-```
-
-+++
-
-### Requires a paradigm shift
-
-* Learn to think like a [functional programmer](http://nealford.com/functionalthinking.html)
-* Use pure functions, high order functions and functional features added in JDK8.
-
-
-+++
-
-### Example for Imperative Style
-
-Let’s say we want to print day of the week for a given list stream date strings in format MM/dd/YYYY. 
-
-```java
-private static LocalDate parseDate(String dateString) {
-        return LocalDate.from(formatter.parse(dateString));
-    }
-public static void main(String args[]) {
-
-    List<String> dates = Arrays.asList("12/31/2014",
-            "01-01-2015",
-            "12/31/2015",
-            "not a date",
-            "01/01/2016");
-
-    List<DayOfWeek> result = new ArrayList<>();
-    for(String dateString: dates){
-
-        try{
-            LocalDate date = parseDate(dateString);
-            result.add(DayOfWeek.from(date));
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
-    }
-}
-
-```
-
-+++
-
-### Example for Functional Style Using optional
-
-```java
-private static Optional<LocalDate> parseDate(String dateString){
-    LocalDate localDate = null;
-    try {
-        localDate = LocalDate.from(formatter.parse(dateString));
-    }catch (DateTimeParseException e){
-        System.out.println(e.getMessage());
-    }
-    return Optional.ofNullable(localDate);
-}
-
-public static void main(String args[]) {
-    Stream.of("12/31/2014",
-            "01-01-2015",
-            "12/31/2015",
-            "not a date",
-            "01/01/2016")
-            .map(StreamExceptionHandling::parseDate)//Parse String to LocalDate
-            .filter(Optional::isPresent) //Filter valid ones
-            .map(Optional::get)//Get wrapped LocalDate
-            .map(DayOfWeek::from) //Map to day of week
-            .forEach(System.out::println); //Print
-}
-```
-
-+++
-
-### Example using Try Monad
-
-We will use Try object from Javaslang which can be either a instance of `Success` or `Failure`
-```java
-
-private static Try<LocalDate> parseDate(String dateString){
-    return Try.of(() -> LocalDate.from(formatter.parse(dateString)));
-}
-private static Try<LocalDate> parseDateAlternate(String dateString){
-    return Try.of(() -> LocalDate.from(alternateFormatter.parse(dateString)));
-}
-public static void main(String args[]) {
-    Stream.of("12/31/2014",
-            "01-01-2015",
-            "12/31/2015",
-            "not a date",
-            "01/01/2016")
-            .map(StreamExceptionHandling::parseDate)//Parse String to LocalDate
-            .map(v-> v.recoverWith( e -> parseDateAlternate(((DateTimeParseException)e).getParsedString())))//Try recovering with alternate formatter
-            .peek(v-> v.onFailure(t -> System.out.println("Failed due to " + t.getMessage())))//Print error on failure
-            .filter(Try::isSuccess)//Filter valids
-            .map(Try::get)//Get wrapped value
-            .map(DayOfWeek::from)//Map to day of week
-            .forEach(System.out::println);//Print
-}
-```
-
-
----
-
-## Important requirements for delivering any feature
-
-+++
-
-### Automated testing
-
-* Have I written automated tests  to verify my feature?
-
-* Learn to use Mocking libraries & Test frameworks
-
-+++
-
-### Logging
-
-* Do I have enough logging to verify my feature works in production?
-
-* Do I have enough information to trouble shoot when something on working?
-
-* Make sure to properly handle and log exceptions.
-
-+++
-
-### Monitoring/Instrumentation
-
-* Do I have easy way to check my feature is working well in production?
-
-* Can I get automated notifications when something goes wrong?
-
----
-
-## Day to Day productivity
-
-* I use intellij and highly recommending it for editing
-
-* I still use eclipse for debugging/hot deploy
-
-* Always whitelist the projects in workspace-user.xml. Just run `ant pre` if you have made a change.
-
-* Try to use git for incremental checkin
-
-
+1. Turn this into a Instrumentation Spark Playground where developers can do adhoc correlation/aggregation to explore AILTN. (Just like people do with splunk queries, but spark + wave is much more efficient)
+2. We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
+3. Use DVA's Spark or Gridforce infrastructure to run pre-defined aggregation continuously and push results to Wave. 
 
 
