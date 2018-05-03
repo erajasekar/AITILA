@@ -1,12 +1,15 @@
 ## Actionable Insights To Increase Lightning Adoption 
 
-### Rajasekar Elango Instrumentation Team
+##### <span style="font-family:Helvetica Neue; font-weight:bold">A <span style="color:#e49436">Rajasekar Elango </span>Instrumentaion Team</span>
+### 
 
 ---
 
 ## Idea
 
-> Mine instrumentation data to find actionable insights to increase lightning adoption. Correlate Lightning Interaction and Lightning Page View events from AILTN log lines to identify most popular users, pages, page flow patterns of Lightning Abandonment. 
+> Mine instrumentation data to find actionable insights to increase lightning adoption. 
+
+Correlate Lightning Interaction and Lightning Page View events from AILTN log lines to identify most popular users, pages, page flow patterns of Lightning Abandonment. 
 
 ---
 
@@ -15,13 +18,35 @@
 1. Imported AILTN logs from Splunk.
 2. Used Apache Zeppelin (Apache Spark interactive notebook) , to correlate and aggregate interaction and page views for `switchToAloha` event.
 3. Transformed Salesforce User Ids to user email address for Gus and Org62 org.
+
+---
+
 4. Programmatically Exported results to Wave Analytics studio.
 5. Created dashboard to identify top users, exit pages and page flow pattern. 
 6. Emailed users asking for feedback on why they switched.
 
 ---
 
-## Feedback I received
+## Actionable Insights As Promised
+
+---
+
+### Yiming Qi
+
+Support inline editing
+
+>I switch to classic because I want to do inline field editing on work items, as opposed to in lightning I have to click edit first then change the fields
+
+---
+
+### Michael Dinsmore
+
+Cases list view reports Error "Lightning isnt' supported"
+
+> When I go to the "cases" tool in GUS, and then to the case list view, I get an error that says that Lightning isnt' supported. 
+
+---
+
 
 |User |Action Items / Issues in Lightning |Actual Comments  |
 |---  |---  |---  |
@@ -41,7 +66,13 @@ Updating tasks is cumbersome and hard to access after loading a story (that's no
 ## How to make this useful beyond Hackathon?
 
 1. Turn this into a Instrumentation Spark Playground where developers can do adhoc correlation/aggregation to explore AILTN. (Just like people do with splunk queries, but spark + wave is much more efficient)
+
+---
+
 2. We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
+
+---
+
 3. Use DVA's Spark or Gridforce infrastructure to run pre-defined aggregation continuously and push results to Wave. 
 
 
