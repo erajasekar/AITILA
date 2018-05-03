@@ -1,14 +1,16 @@
-# Actionable Insights To Increase Lightning Adoption 
+## Actionable Insights To Increase Lightning Adoption 
 
 ### Rajasekar Elango Instrumentation Team
 
-# Idea
+---
+
+## Idea
 
 > Mine instrumentation data to find actionable insights to increase lightning adoption. Correlate Lightning Interaction and Lightning Page View events from AILTN log lines to identify most popular users, pages, page flow patterns of Lightning Abandonment. 
 
 ---
 
-# What did I do?
+## What did I do?
 
 1. Imported AILTN logs from Splunk.
 2. Used Apache Zeppelin (Apache Spark interactive notebook) , to correlate and aggregate interaction and page views for `switchToAloha` event.
@@ -19,7 +21,7 @@
 
 ---
 
-# Feedback I received
+## Feedback I received
 
 |User |Action Items / Issues in Lightning |Actual Comments  |
 |---  |---  |---  |
@@ -36,7 +38,7 @@ Updating tasks is cumbersome and hard to access after loading a story (that's no
 
 ---
 
-# How to make this useful beyond Hackathon?
+## How to make this useful beyond Hackathon?
 
 1. Turn this into a Instrumentation Spark Playground where developers can do adhoc correlation/aggregation to explore AILTN. (Just like people do with splunk queries, but spark + wave is much more efficient)
 2. We can apply idea to correlate other log lines as well. Eg. Correlate `AILTN` and `AUGEN` using request id.
