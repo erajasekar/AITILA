@@ -31,9 +31,9 @@ Correlate Lightning Interaction and Lightning Page View events from AILTN log li
 
 ---
 
-### Yiming Qi
+#### No Inline editing Support 
 
-No Inline editing Support
+Yiming Qi
 
 >I switch to classic because I want to do inline field editing on work items, as opposed to in lightning I have to click edit first then change the fields
 
@@ -58,6 +58,8 @@ Attachments (e.g. google docs) do not load when linking from within lighting
 ### Nick Gardner
 
 > when building reports and dashboards 80% of the time the page will not load causing me to refresh or exit lightning all together 
+
+---
 
 ### Nihar Aleti
 
